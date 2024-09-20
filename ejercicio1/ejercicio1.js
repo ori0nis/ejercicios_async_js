@@ -4,7 +4,7 @@ const charactersList = document.querySelector("#character-list")
 const characterImage = document.querySelector(".character-image")
 
 
-const charactersAsync = async () => {
+const characters = async () => {
     
     try {
         const res = await fetch('https://thronesapi.com/api/v2/Characters');
@@ -22,7 +22,7 @@ const charactersAsync = async () => {
     }
 }
 
-charactersAsync();
+characters();
 
 charactersList.addEventListener("change", (e) => {
     
