@@ -12,18 +12,11 @@ const charactersAsync = async () => {
         console.log(characters);
 
         for (const character of characters) {
-            
-            const characterName = document.createElement("h1");
-            characterName.textContent = `${character.firstName}, ${character.lastName}`;
-
-            const characterImage = document.createElement("img");
-            characterImage.src = character.imageUrl;
-        
-            charactersList.insertAdjacentElement("beforebegin", characterName);
-
-            charactersList.innerHTML = characters;
+            const characterOption = document.createElement("option");
+            characterOption.value = character.imageUrl;
+            characterOption.textContent = character.fullName;
+            charactersList.appendChild(characterOption);
         }
-        
     } catch(err) {
         console.error("That character doesn't exist");
     }
@@ -31,14 +24,8 @@ const charactersAsync = async () => {
 
 charactersAsync();
 
-
-/* const charactersNormal = fetch('https://thronesapi.com/api/v2/Characters')
-.then ((res) => {
-    return res.json()
-    .then ((data) => {
-        console.log(data);
-    })
-.catch ((err) => {
-    console.error(err);
-}) 
-}) */
+charactersList.addEventListener("change", (e) => {
+    
+    const selectedImageValue = e.target.value;
+        characterImage.src = selectedImageValue;
+});
