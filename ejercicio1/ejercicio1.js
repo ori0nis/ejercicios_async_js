@@ -1,4 +1,5 @@
 // https://thronesapi.com/api/v2/Characters
+// La he encontrado yo sola :'D
 
 const charactersList = document.querySelector("#character-list")
 const characterImage = document.querySelector(".character-image")
@@ -27,5 +28,5 @@ characters();
 charactersList.addEventListener("change", (e) => {
     
     const selectedImageValue = e.target.value;
-        characterImage.src = selectedImageValue;
+    characterImage.src = selectedImageValue;
 });
