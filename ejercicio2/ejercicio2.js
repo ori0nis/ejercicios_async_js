@@ -18,7 +18,6 @@ const allPokemons = () => {
                 console.log(thisRandomPokemon);
                 pokemonImageContainer.src = thisRandomPokemon.sprites.front_default;
             })
-        
 })
     .catch(err => {
     console.error("That Pokémon doesn't exist", err);
